@@ -1,0 +1,32 @@
+app:
+  refresh:
+    link: /auth/refresh
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/api_bank_db
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  web:
+    resources:
+      static-locations: classpath:/META-INF/resources/
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  token:
+    secret: passpasspasspasspasspasspasspasspasspasspasspasspasspasspasspass
+    ttl_ms:
+      access: 259200000
+      refresh: 345600000
+      reset: 86400000
